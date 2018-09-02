@@ -21,17 +21,26 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVc-or-PEd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </arscnView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plane Detected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyR-hk-5UC">
+                                <rect key="frame" x="95" y="40" width="186" height="34.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="QVc-or-PEd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="46Z-FR-5JO"/>
                             <constraint firstItem="QVc-or-PEd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7Lx-Kj-DtS"/>
                             <constraint firstItem="QVc-or-PEd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IRz-Jc-k6V"/>
+                            <constraint firstItem="nyR-hk-5UC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LDm-TS-cnu"/>
                             <constraint firstItem="QVc-or-PEd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RWN-jW-IUa"/>
+                            <constraint firstItem="nyR-hk-5UC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="iTP-Ln-1fK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="planeDetectedLabel" destination="nyR-hk-5UC" id="3Pn-42-7DU"/>
                         <outlet property="sceneView" destination="QVc-or-PEd" id="a3R-Gn-7wh"/>
                     </connections>
                 </viewController>
