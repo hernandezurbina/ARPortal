@@ -12,6 +12,7 @@
 		7A4B7496213C3B530009C395 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4B7494213C3B530009C395 /* Main.storyboard */; };
 		7A4B7498213C3B630009C395 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4B7497213C3B630009C395 /* Assets.xcassets */; };
 		7A4B749B213C3B630009C395 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4B7499213C3B630009C395 /* LaunchScreen.storyboard */; };
+		7A4B74A5213C6EC90009C395 /* Portal.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4B74A4213C6EC90009C395 /* Portal.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		7A4B7497213C3B630009C395 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A4B749A213C3B630009C395 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A4B749C213C3B630009C395 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A4B74A4213C6EC90009C395 /* Portal.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Portal.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +58,9 @@
 			children = (
 				7A4B7490213C3B530009C395 /* AppDelegate.swift */,
 				7A4B7492213C3B530009C395 /* ViewController.swift */,
-				7A4B7494213C3B530009C395 /* Main.storyboard */,
+				7A4B74A4213C6EC90009C395 /* Portal.scnassets */,
 				7A4B7497213C3B630009C395 /* Assets.xcassets */,
+				7A4B7494213C3B530009C395 /* Main.storyboard */,
 				7A4B7499213C3B630009C395 /* LaunchScreen.storyboard */,
 				7A4B749C213C3B630009C395 /* Info.plist */,
 			);
@@ -122,6 +125,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4B74A5213C6EC90009C395 /* Portal.scnassets in Resources */,
 				7A4B749B213C3B630009C395 /* LaunchScreen.storyboard in Resources */,
 				7A4B7498213C3B630009C395 /* Assets.xcassets in Resources */,
 				7A4B7496213C3B530009C395 /* Main.storyboard in Resources */,

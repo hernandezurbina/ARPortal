@@ -25,11 +25,47 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         self.configuration.planeDetection = .horizontal
         self.sceneView.delegate = self
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        
+        self.sceneView.addGestureRecognizer(tapGestureRecognizer)
         self.sceneView.session.run(configuration)
         
         
     }
+    /// the function below is required for the bicoco demo app
+    @objc func handleTap(sender: UITapGestureRecognizer){
+        guard let sceneView = sender.view as? ARSCNView else {return}
+        let touchLocation = sender.location(in: sceneView)
+        
+        let hitTestResult = sceneView.hitTest(touchLocation, types: .existingPlane)
+        
+        if !hitTestResult.isEmpty{
+            //add room
+            self.addPortal(hitTestResult: hitTestResult.first!)
+        }
+    }
 
+    func addPortal(hitTestResult: ARHitTestResult){
+        let portalScene = SCNScene(named: "Portal.scnassets/Portal.scn")
+        let portalNode = portalScene!.rootNode.childNode(withName: "Portal", recursively: false)!
+        let transform = hitTestResult.worldTransform
+        let planeXPosition = transform.columns.3.x
+        let planeYPosition = transform.columns.3.y
+        let planeZPosition = transform.columns.3.z
+        
+        portalNode.position = SCNVector3(planeXPosition, planeYPosition, planeZPosition)
+        
+        self.sceneView.scene.rootNode.addChildNode(portalNode)
+        self.addPlane(nodeName: "roof", portalNode: portalNode, imageName: "top")
+        self.addPlane(nodeName: "floor", portalNode: portalNode, imageName: "bottom")
+        self.addPlane(nodeName: "sideWallA", portalNode: portalNode, imageName: "sideA")
+        self.addPlane(nodeName: "sideWallB", portalNode: portalNode, imageName: "sideB")
+        self.addPlane(nodeName: "backWall", portalNode: portalNode, imageName: "back")
+        self.addPlane(nodeName: "sideDoorB", portalNode: portalNode, imageName: "sideDoorB")
+        self.addPlane(nodeName: "sideDoorA", portalNode: portalNode, imageName: "sideDoorA")
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,5 +82,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
 
+    func addPlane(nodeName: String, portalNode: SCNNode, imageName: String){
+        let child = portalNode.childNode(withName: nodeName, recursively: true)
+        child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Portal.scnassets/\(imageName).png")
+    }
+    
 }
 
